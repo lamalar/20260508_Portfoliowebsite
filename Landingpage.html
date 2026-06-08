@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_projektseite.css">
+    <title>Portfolio Lara Müller</title>
+</head>
+
+<body class="landing">
+
+  <header class="top-bar">
+    <h1 class="left"><a href="00_Übersicht_GD.html">Graphic Design</a>
+    </h1>
+
+     <h1 class="center"><a href="Landingpage.html">Portfolio<br>Lara Müller</a>
+    </h1>
+   
+
+    <h1 class="right"><a href="00_Übersicht_Fotografie.html">Photography</a></h1>
+</header>
+
+
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+    const images = [
+      "images/Projekte Fotografie/Bauer/IMG_9245.webp",
+      "images/Projekte Fotografie/Bauer/IMG_9278.webp",
+      "images/Projekte Grafik/01_Type on screen/IMG_1678.webp",
+      "images/Bildschirmfoto 2026-03-03 um 13.34.53.webp",
+      "images/IMG_4903.webp"
+    ];
+    
+    let activeImages = [];
+    const maxImages = 2;
+    
+    function createImage() {
+      if (activeImages.length >= maxImages) return;
+    
+      const img = document.createElement("img");
+      img.src = images[Math.floor(Math.random() * images.length)];
+      img.classList.add("img");
+    
+      let top, left;
+    
+      if (activeImages.length === 0) {
+        // erstes Bild: komplett frei
+        top = Math.random() * 70;
+        left = Math.random() * 70;
+      } else {
+        // zweites Bild: bewusst Abstand halten
+        const existing = activeImages[0];
+    
+        do {
+          top = Math.random() * 70;
+          left = Math.random() * 70;
+        } while (
+          Math.abs(top - existing.top) < 20 &&
+          Math.abs(left - existing.left) < 20
+        );
+      }
+      
+    // einpassgrösse der Bilder
+      img.style.top = top + "%";
+      img.style.left = left + "%";
+      img.style.width = (150 + Math.random() * 200) + "px";
+
+      const maxTop = window.innerHeight - 350;
+        const maxLeft = window.innerWidth - 350;
+
+        img.style.top = Math.random() * maxTop + "px";
+        img.style.left = Math.random() * maxLeft + "px";
+    
+      document.getElementById("gallery").appendChild(img);
+    
+      activeImages.push({ el: img, top, left });
+
+    // wie schnell die Bilder wechseln
+      setTimeout(() => {
+        img.remove();
+        activeImages = activeImages.filter(i => i.el !== img);
+      }, 4000);
+    }
+    
+    function loop() {
+      createImage();
+      setTimeout(loop, 800 + Math.random() * 1200);
+    }
+    
+    loop();
+    </script>
+
+<div class="background-text">
+  <span class="space1">Welcome</span> <br>
+  to <span class="space2">my</span> <br>
+  Portfolio
+</div>
+
+</body class="landing">
+
+<footer class="footer">
+    <h1 class="left"><a href="#">Instagram</a></h1>
+    
+    <h1 class="right"><a href="Kontakt.html">Kontakt</a></h1>
+</footer>
+</html>
