@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'suissebold';
-    src: url('../fonts/SuisseEDUIntl-Bold-WebXL.woff2') format('woff2');
+    font-family: 'stacksans';
+    src: url('../fonts/StackSansText-Medium.ttf') format('ttf');
 }
 
 @font-face {
@@ -23,7 +23,7 @@ body {
 .top-bar a{
     position: relative;
     padding: 20px;
-    font-family: "suissebold", sans-serif;
+    font-family: "stacksans", sans-serif;
     color: rgb(0, 0, 0);
     text-decoration: none;
     color: inherit;
@@ -52,7 +52,7 @@ body {
 
 .text {
     position: relative;
-    font-family: "suissemedium", sans-serif;
+    font-family: "stacksans", sans-serif;
     color: black;
     font-size: 24px;
     line-height: 1.3;
@@ -63,7 +63,7 @@ body {
 
 
 .legende {
-    font-family: "suissemedium", sans-serif;
+    font-family: "stacksans", sans-serif;
     color: black;
     font-size: 13px;
     line-height: 1.3;
@@ -76,7 +76,7 @@ body {
 }
 /* Bildlegende Projektseite */
 .legendegd {
-    font-family: "suissemedium", sans-serif;
+    font-family: "stacksans", sans-serif;
     color: white;
     font-size: 13px;
     line-height: 1.3;
