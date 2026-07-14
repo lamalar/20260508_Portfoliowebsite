@@ -1,19 +1,20 @@
 /* Mobile Styles – max 768px */
 @media (max-width: 768px) {
 
-  /* Header: Stack left/center/right vertically */
-  .top-bar {
+  /* Header: Stack left/center/right vertically (not on landing page) */
+  body:not(.landing) .top-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
   }
 
-  .left, .right {
+  body:not(.landing) .left,
+  body:not(.landing) .right {
     position: static;
   }
 
-  .top-bar a {
+  body:not(.landing) .top-bar a {
     font-size: 14px;
     padding: 6px 12px;
   }
@@ -72,32 +73,26 @@
     padding: 16px;
   }
 
-  /* Footer: stack links */
-  .footer {
+  /* Footer: stack links (not on landing page) */
+  body:not(.landing) .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .footer a {
+  body:not(.landing) .footer a {
     margin: 6px 0;
   }
 
-  /* Landing page */
-  .background-text {
-    font-weight: 900;
-    font-size: 20vw;
-    padding: 0 5vw;
-    box-sizing: border-box;
-  }
-
-  .gallery {
-    height: 60vh;
+  /* Landing page: smaller floating images on mobile */
+  body.landing .gallery .img {
+    max-width: 140px !important;
+    height: auto !important;
   }
 }
 
 @media (max-width: 480px) {
-  .top-bar a {
+  body:not(.landing) .top-bar a {
     font-size: 12px;
     padding: 4px 8px;
   }
