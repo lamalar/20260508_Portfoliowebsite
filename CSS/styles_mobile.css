@@ -64,6 +64,16 @@
 
   body:not(.landing) .footer a {
     margin: 6px 0;
+    padding: 20px;
+  }
+
+  /* Footer auf Projektseiten: schwarzer Hintergrund, weisse Schrift */
+  body:not(.landing):not(.overview) .footer {
+    background-color: rgb(0, 0, 0);
+  }
+
+  body:not(.landing):not(.overview) .footer a {
+    color: rgb(255, 255, 255);
   }
 
   /* Landing page: smaller floating images on mobile */

@@ -426,11 +426,15 @@ body {
 
 /* Header + Footer */
 .top-bar {
+    position: relative;
+    z-index: 100;
+}
+
+body.landing .top-bar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
 }
 
 .footer {
@@ -467,9 +471,7 @@ body.overview .top-bar {
     border-bottom: none;
 }
 
-body:not(.landing) {
-    padding-top: 80px;
-}
+/* padding-top entfernt – Header scrollt jetzt mit */
 
 body:not(.landing) .top-bar {
     background: transparent;
