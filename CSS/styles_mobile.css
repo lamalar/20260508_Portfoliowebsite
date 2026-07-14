@@ -85,7 +85,10 @@
 
   /* Landing page */
   .background-text {
-    font-size: 12vw;
+    font-weight: 900;
+    font-size: 20vw;
+    padding: 0 5vw;
+    box-sizing: border-box;
   }
 
   .gallery {
