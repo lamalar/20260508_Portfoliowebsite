@@ -1,24 +1,6 @@
 /* Mobile Styles – max 768px */
 @media (max-width: 768px) {
 
-  /* Header: Stack left/center/right vertically (not on landing page) */
-  body:not(.landing) .top-bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-  }
-
-  body:not(.landing) .left,
-  body:not(.landing) .right {
-    position: static;
-  }
-
-  body:not(.landing) .top-bar a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
   /* Text: full width, smaller */
   .text {
     width: 100%;
@@ -92,11 +74,6 @@
 }
 
 @media (max-width: 480px) {
-  body:not(.landing) .top-bar a {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
   .text {
     font-size: 16px;
     line-height: 1.3;
