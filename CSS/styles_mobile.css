@@ -1,0 +1,110 @@
+/* Mobile Styles – max 768px */
+@media (max-width: 768px) {
+
+  /* Header: Stack left/center/right vertically */
+  .top-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .left, .right {
+    position: static;
+  }
+
+  .top-bar a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  /* Text: full width, smaller */
+  .text {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+    box-sizing: border-box;
+  }
+
+  .legende {
+    font-size: 12px;
+    padding-right: 16px;
+  }
+
+  .lebenslauf {
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 12px;
+  }
+
+  /* GD grid: 1 column on phone */
+  .image-grid-grafikdesign {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  /* Photo grid: stack everything */
+  .photo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4mm;
+    padding: 4mm;
+  }
+
+  .photo-grid .item,
+  .photo-grid .span-12,
+  .photo-grid .span-8,
+  .photo-grid .span-6,
+  .photo-grid .span-4,
+  .photo-grid .span-3,
+  .photo-grid .span-2 {
+    grid-column: span 12;
+  }
+
+  /* Project navigation arrows: smaller */
+  .nav-arrow {
+    font-size: 2rem;
+  }
+
+  .project-navigation {
+    padding: 16px;
+  }
+
+  /* Footer: stack links */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer a {
+    margin: 6px 0;
+  }
+
+  /* Landing page */
+  .background-text {
+    font-size: 12vw;
+  }
+
+  .gallery {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .nav-arrow {
+    font-size: 1.5rem;
+  }
+}
