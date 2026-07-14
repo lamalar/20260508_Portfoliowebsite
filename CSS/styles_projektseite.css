@@ -322,7 +322,7 @@ body {
   /* Landingpage Hintergrundfarbe */
   body.landing {
     margin: 0;
-    background-color: rgb(190, 202, 255);
+    background-color: rgb(53, 255, 44);
     
   }
 
@@ -338,13 +338,13 @@ body {
     transform: translateY(-50%);
 
     font-family: "Zalando Sans", sans-serif;
-    font-weight: 900;
-    font-size: 15vw;
+    font-weight: 400;
+    font-size: 16px;
     line-height: 0.9;
 
     text-transform: uppercase;
 
-    color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
 
     text-align: center;
 
