@@ -24,74 +24,10 @@
 
 
 
-<div class="gallery" id="gallery"></div>
-
-<script>
-    const images = [
-      "images/Projekte_Fotografie/Bauer/IMG_9245.webp",
-      "images/Projekte_Fotografie/Bauer/IMG_9278.webp",
-      "images/Projekte_Grafik/01_Typeonscreen/IMG_1678.webp",
-      "images/Projekte_Grafik/03_Twentytwo/schriftzug.png"
-    ];
-    
-    let activeImages = [];
-    const maxImages = 2;
-    
-    function createImage() {
-      if (activeImages.length >= maxImages) return;
-    
-      const img = document.createElement("img");
-      img.src = images[Math.floor(Math.random() * images.length)];
-      img.classList.add("img");
-    
-      let top, left;
-    
-      if (activeImages.length === 0) {
-        // erstes Bild: komplett frei
-        top = Math.random() * 70;
-        left = Math.random() * 70;
-      } else {
-        // zweites Bild: bewusst Abstand halten
-        const existing = activeImages[0];
-    
-        do {
-          top = Math.random() * 70;
-          left = Math.random() * 70;
-        } while (
-          Math.abs(top - existing.top) < 20 &&
-          Math.abs(left - existing.left) < 20
-        );
-      }
-      
-    // einpassgrösse der Bilder
-      img.style.top = top + "%";
-      img.style.left = left + "%";
-      img.style.width = (150 + Math.random() * 200) + "px";
-
-      const maxTop = window.innerHeight - 350;
-        const maxLeft = window.innerWidth - 350;
-
-        img.style.top = Math.random() * maxTop + "px";
-        img.style.left = Math.random() * maxLeft + "px";
-    
-      document.getElementById("gallery").appendChild(img);
-    
-      activeImages.push({ el: img, top, left });
-
-    // wie schnell die Bilder wechseln
-      setTimeout(() => {
-        img.remove();
-        activeImages = activeImages.filter(i => i.el !== img);
-      }, 4000);
-    }
-    
-    function loop() {
-      createImage();
-      setTimeout(loop, 800 + Math.random() * 1200);
-    }
-    
-    loop();
-    </script>
+<section class="green-section">
+  <div class="gallery" id="gallery"></div>
+  <div class="scroll-arrow">▼</div>
+</section>
 
 <div class="background-text">
   Welcome<br>
@@ -99,11 +35,51 @@
   Portfolio
 </div>
 
+<section class="dark-section">
+  <div class="image-big">
+    <img src="images/Projekte_Grafik/01_Typeonscreen/IMG_1678.webp" alt="Bild 3">
+  </div>
+
+  <div class="image-big">
+    <img src="images/Projekte_Grafik/05_Suedpol/IMG_0603.jpg" alt="Bild 3">
+  </div>
+
+   <div class="image-big">
+    <img src="images/Projekte_Fotografie/Bauer/IMG_9758.jpg" alt="Bild 3">
+  </div>
+  
+</section>
+
 <footer class="footer">
-    <h1 class="left"><a href="https://www.instagram.com/atelier.lamue.graphicdesign/">Instagram</a></h1>
-    
-    <h1 class="right"><a href="Kontakt.html">Kontakt</a></h1>
+  <h1 class="left"><a href="https://www.instagram.com/atelier.lamue.graphicdesign/">Instagram</a></h1>
+  <h1 class="right"><a href="Kontakt.html">Kontakt</a></h1>
 </footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var text = document.querySelector('.background-text');
+    var green = document.querySelector('.green-section');
+    var arrow = document.querySelector('.scroll-arrow');
+    if (!text || !green) return;
+    var rect = green.getBoundingClientRect();
+    var isPast = rect.bottom <= 0;
+
+    text.style.color = isPast ? 'rgb(53, 255, 44)' : 'rgb(0, 0, 0)';
+
+    var links = document.querySelectorAll('.top-bar a, .footer a');
+    for (var i = 0; i < links.length; i++) {
+      links[i].style.color = isPast ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)';
+    }
+
+    if (arrow) {
+      if (window.scrollY > 20) {
+        arrow.classList.add('hidden');
+      } else {
+        arrow.classList.remove('hidden');
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
