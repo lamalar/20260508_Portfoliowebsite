@@ -55,16 +55,25 @@
     padding: 16px;
   }
 
-  /* Footer: stack links (not on landing page) */
+  /* Footer: links nebeneinander (nicht auf landing page) */
   body:not(.landing) .footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  body:not(.landing) .footer .left,
+  body:not(.landing) .footer .right {
+    position: static;
+    top: auto;
   }
 
   body:not(.landing) .footer a {
-    margin: 6px 0;
     padding: 20px;
+    margin: 0;
   }
 
   /* Footer auf Projektseiten: schwarzer Hintergrund, weisse Schrift */
